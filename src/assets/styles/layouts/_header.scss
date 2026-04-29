@@ -1,0 +1,54 @@
+@use "../dependencies" as *;
+
+@layer layouts {
+  .main-header {
+    .main-nav {
+      // Forcem el color de fons de la teva marca
+      background-color: $brand-dark !important;
+      border-bottom: 2px solid $brand-primary;
+      padding: 0.75rem 0;
+
+      &__logo {
+        font-weight: bold;
+        text-decoration: none;
+        
+        &-text { color: $brand-light; }
+        &-accent { color: $brand-primary; }
+      }
+
+      &__list {
+        text-align: right;
+        .nav-link {
+          color: rgba(255, 255, 255, 0.8) !important;
+          text-transform: uppercase;
+          font-size: toRem(13);
+          font-weight: 500;
+          letter-spacing: 1px;
+
+          &:hover {
+            color: $brand-primary !important;
+          }
+        }
+      }
+    }
+  }
+}
+
+// --- LÒGICA PER AMAGAR L'ENLLAÇ ACTUAL ---
+// Aquesta part ha d'anar fora de qualsevol "layer" o "nesting" per tenir prioritat
+body.page-home .nav-link--home,
+body.page-ponents .nav-link--ponents,
+body.page-article .nav-link--article,
+body.page-extra .nav-link--extra {
+  display: none !important;
+}
+
+// Ajust per al menú desplegable en mòbil
+@media (max-width: 991px) {
+  .navbar-collapse {
+    //background-color: color-mix(in srgb, $brand-dark, white 5%);
+    padding: 1rem;
+    border-radius: 8px;
+    margin-top: 10px;
+  }
+}

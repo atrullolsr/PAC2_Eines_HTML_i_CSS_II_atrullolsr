@@ -1,0 +1,54 @@
+<!doctype html>
+
+<html lang="ca">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
+    <!-- do not remove this line! -->
+    <title>UOC Boilerplate</title>
+  </head>
+  <body class="page-ponents">
+    <include src="./views/header.html"></include>
+
+    <main class="container my-5">
+      <h1 class="text-center mb-5">Ponents de les Jornades</h1>
+    
+      <section class="l-speakers-grid">
+        <article class="c-speaker-card card h-100 shadow-sm border-0">
+          <div class="c-speaker-card__image-wrapper card-img-top">
+            <img src="assets/images/enric-orobitg.jpg" alt="Enric Orobitg" class="img-fluid">
+          </div>
+          <div class="card-body p-4">
+            <h2 class="c-speaker-card__name h5 card-title">Enric Orobitg Clua</h2>
+            <p class="c-speaker-card__bio card-text">Un dels últims mestres terrissaires en actiu de Verdú. Orobitg representa la tradició més pura del "silló".</p>
+          </div>
+        </article>
+    
+        <article class="c-speaker-card card h-100 shadow-sm border-0">
+          <div class="c-speaker-card__image-wrapper card-img-top">
+            <img src="assets/images/carme-balada.jpg" alt="Carme Balada" class="img-fluid">
+          </div>
+          <div class="card-body p-4">
+            <h2 class="c-speaker-card__name h5 card-title">Carme Balada</h2>
+            <p class="c-speaker-card__bio card-text">Artista ceramista que explora el minimalisme i la unió entre el disseny modern i el fang.</p>
+          </div>
+        </article>
+        
+        <article class="c-speaker-card card h-100 shadow-sm border-0">
+          <div class="c-speaker-card__image-wrapper card-img-top">
+            <img src="assets/images/toni-cumella.jpg" alt="Toni Cumella" class="img-fluid">
+          </div>
+          <div class="card-body p-4">
+            <h2 class="c-speaker-card__name h5 card-title">Antoni Cumella</h2>
+            <p class="c-speaker-card__bio card-text">Mestre ceramista especialista en la integració de la ceràmica en l'arquitectura i el patrimoni.</p>
+          </div>
+        </article>
+      </section>
+    </main>
+
+    <include src="./views/footer.html"></include>
+    <script type="module" src="./assets/scripts/main.js"></script>
+    <!-- do not remove this line! -->
+  </body>
+</html>

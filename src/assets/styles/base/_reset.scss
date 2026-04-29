@@ -1,0 +1,32 @@
+@use "../variables";
+
+@layer base {
+  * {
+    box-sizing: border-box;
+  }
+
+  html {
+    height: 100%; // Base per a que el min-height del body tingui referència
+  }
+
+  // 1. Fem que el body ocupi tota l'alçada de la pantalla
+  body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100dvh; // Unitat moderna (Dynamic Viewport Height)
+    margin: 0;
+    background-color: var(--bs-body-bg); // Utilitzem la variable de Bootstrap
+    color: var(--bs-body-color);
+    font-family: variables.$font-family-sans-serif;
+  }
+
+  // 2. El main s'estira per empènyer el footer
+  main {
+    flex: 1 0 auto;
+  }
+
+  // 3. El footer es queda a baix sense encollir-se
+  footer {
+    flex-shrink: 0;
+  }
+}

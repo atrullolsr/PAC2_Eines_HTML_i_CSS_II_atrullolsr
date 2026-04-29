@@ -1,6 +1,6 @@
 <!doctype html>
 
-<html>
+<html lang="ca">
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width" />
@@ -8,27 +8,37 @@
     <!-- do not remove this line! -->
     <title>UOC Boilerplate</title>
   </head>
-  <body>
-    <div class="uoc-container">
-      <picture>
-        <source
-          srcset="./assets/images/logo.png?as=webp&width=350"
-          type="image/webp"
-        />
-        <img
-          src="./assets/images/logo.png?width=350"
-          alt="Universitat Oberta de Catalunya"
-          class="uoc-logo"
-        />
-      </picture>
-      <h1 class="uoc-title">Hello, UOC!</h1>
-      <p>
-        This is a starter template for the Advanced HTML and CSS Tools courses
-        from the Master's Program in Multimedia Applications and the Master's
-        Program in Web App and Website Development at the Universitat Oberta de
-        Catalunya.
-      </p>
-    </div>
+  <body class="page-extra">
+    <include src="./views/header.html"></include>
+
+    <main class="l-poster-wrapper">
+      <section class="c-poster">
+
+        <header class="c-poster__header">
+          <h1 class="c-poster__title">
+            <span class="c-poster__text--huge">Verdú</span>
+            <span class="c-poster__text--year">2026</span>
+          </h1>
+          <p class="c-poster__subtitle">L'ART DEL FANG I EL FOC</p>
+        </header>
+
+        <div class="c-poster__image-box">
+          <img src="assets/images/verdu-poster.jpg" alt="Terrissa de Verdú" class="c-poster__img">
+        </div>
+
+        <div class="c-poster__info">
+          <p class="c-poster__date">04 — 06 JUNY</p>
+          <p class="c-poster__location">VERDÚ, L'URGELL</p>
+        </div>
+
+        <div class="c-poster__actions">
+          <a href="article.html" class="btn btn-primary">L'Ofici</a>
+          <a href="extra.html" class="btn btn-primary">Tallers</a>
+        </div>
+
+      </section>
+    </main>
+
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
     <!-- do not remove this line! -->

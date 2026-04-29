@@ -1,0 +1,118 @@
+@use "../dependencies" as *;
+
+@layer pages {
+  .l-article-page {
+    background-color: $brand-light; // Un blanc "paper" molt elegant
+    color: oklch(20% 0.01 40);
+
+    .c-main-article {
+      :is(h1, h2, h3, h4) {
+        font-family: $font-family-serif;
+        color: $brand-dark;
+        margin-top: 2rem;
+      }
+
+      // REQUISIT PAC: Ús de :has() per estilar la figura si conté una imatge
+      figure:has(img) {
+        margin: 3rem 0;
+        padding: 1rem;
+        background: white;
+        box-shadow: 0 10px 40px oklch(0% 0 0 / 5%);
+        border-radius: 8px;
+
+        img {
+          width: 100%;
+          border-radius: 4px;
+          filter: contrast(1.1) grayscale(20%);
+        }
+
+        figcaption {
+          margin-top: 1rem;
+          font-size: 0.85rem;
+          color: $brand-primary;
+          text-align: center;
+          text-transform: uppercase;
+          letter-spacing: 1px;
+        }
+      }
+
+      .c-article-header {
+        &__title {
+          font-size: clamp(2.5rem, 6vw, 4rem);
+          line-height: 1.1;
+          margin-bottom: 1rem;
+        }
+        &__subtitle {
+          font-size: 1.25rem;
+          opacity: 0.7;
+          font-style: italic;
+        }
+        &__meta {
+          margin-top: 2rem;
+          font-size: 0.9rem;
+          text-transform: uppercase;
+          letter-spacing: 2px;
+          color: $brand-primary;
+        }
+      }
+
+      .c-article-lead {
+        font-size: 1.4rem;
+        line-height: 1.6;
+        color: oklch(45% 0.05 40);
+        margin: 3rem 0;
+        font-weight: 300;
+        // Lletra capital (detall de qualitat)
+        &::first-letter {
+          float: left;
+          font-size: 4.5rem;
+          line-height: 0.8;
+          margin-right: 10px;
+          color: $brand-primary;
+          font-family: $font-family-serif;
+        }
+      }
+
+      .c-article-quote {
+        margin: 4rem 0;
+        padding: 3rem;
+        background-color: var(--bs-dark);
+        color: white;
+        border-left: 10px solid $brand-primary;
+        font-size: 1.6rem;
+        font-style: italic;
+        line-height: 1.4;
+      }
+
+      .c-article-list {
+        list-style: none;
+        padding: 0;
+        li {
+          margin-bottom: 1rem;
+          padding-left: 2rem;
+          &::before {
+            content: '●';
+            color: $brand-primary;
+            position: relative;
+            left: -20px;
+          }
+        }
+      }
+    }
+
+    // Sidebar Sticky
+    .c-article-sidebar {
+      position: sticky;
+      top: 100px;
+      .c-sidebar-card {
+        background: white;
+        padding: 2rem;
+        border: 1px solid oklch(90% 0.01 40);
+        border-radius: 12px;
+        img { margin: 1.5rem 0; border-radius: 6px; width: -webkit-fill-available; }
+        h4 { margin-top: 0; color: $brand-primary; font-size: 1.1rem; }
+        p { font-size: 0.85rem; line-height: 1.6; }
+      }
+    }
+  }
+}

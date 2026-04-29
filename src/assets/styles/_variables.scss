@@ -1,12 +1,67 @@
 @use "sass:color";
 
-$font-family-sans-serif:
-  -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue",
-  Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
-$font-family-serif: "Georgia", "Times New Roman", serif;
+// --- Fonts ---
+$font-family-sans-serif: 'Inter', system-ui, -apple-system, sans-serif;
+$font-family-serif: 'Playfair Display', 'Georgia', serif;
 
-$uoc-corporate: #000078;
-$uoc-masterbrand: #73edff;
-$uoc-bg: color.scale($uoc-masterbrand, $lightness: 70%);
+// --- Colors Jornades d'Artesania ---
+$brand-primary: #8b5a2b;
+$brand-secondary: #d4af37;
+$brand-dark: #2c2c2c;
+$brand-light: #fdfaf6;
 
-$mqMinWidth: 420px;
+// --- NOVETAT: Colors moderns (Requisit Mòdul 3) ---
+// Definim un color accent fent servir OKLCH per a la pàgina de "Contingut Lliure"
+$modern-accent: oklch(70% 0.12 45); // Un taronja argila molt vibrant
+$modern-soft-bg: color-mix(in srgb, $brand-primary, transparent 90%);
+
+// --- Variables que demana el Boilerplate / Bootstrap ---
+$uoc-corporate: $brand-dark;
+$uoc-masterbrand: $brand-primary;
+$uoc-bg: $brand-light;
+
+// --- Personalització de Bootstrap ---
+$primary: $brand-primary;
+$secondary: $brand-secondary;
+$body-bg: $brand-light;
+$body-color: $brand-dark;
+
+// --- Breakpoints ---
+$mq-mobile: 576px;
+$mq-tablet: 768px;
+$mq-desktop: 1024px;
+
+:root {
+  --brand-primary: #{$brand-primary};
+  --brand-secondary: #{$brand-secondary};
+  --brand-dark: #{$brand-dark};
+  --brand-light: #{$brand-light};
+
+  // Exemple de color modern amb OKLCH (Molt recomanat per la PAC)
+  --brand-accent: oklch(65% 0.15 40);
+}
+
+// --- FUNCIONS (Requisit obligatori de Sass) ---
+// Funció per passar de px a rem i fer el codi més accessible
+@function toRem($value) {
+  $remValue: calc($value / 16) + rem;
+  @return $remValue;
+}
+
+// Mixin per a títols amb estil artesanal
+@mixin section-title($color: $brand-primary) {
+  font-family: $font-family-serif;
+  font-weight: 700;
+  color: $color;
+  position: relative;
+  margin-bottom: toRem(30);
+
+  &::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: $brand-secondary;
+    margin-top: toRem(10);
+  }
+}

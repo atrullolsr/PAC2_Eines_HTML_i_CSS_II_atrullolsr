@@ -4,16 +4,37 @@
  */
 
 /**
- * Import dependencies
+ * 1. IMPORT DEPENDENCIES
+ * Solen incloure Bootstrap i variables globals.
  */
 @use "dependencies";
 
 /**
- * Import layouts
- * It's a best practice to use a different partial for each page
+ * IMPORT RESET & BASE
+ * Afegeix el teu fitxer de reset aquí.
+ */
+@use "base/reset";
+
+/**
+ * IMPORT LAYOUTS / PAGES
+ * Afegim les 3 pàgines noves que et demana l'enunciat.
  */
 
-@use "layouts/home";
+// Components globals
+@use "layouts/header";
+@use "layouts/footer";
+
+// Estils específics per pàgina
+@use "pages/home";
+@use "pages/speakers";
+@use "pages/article";
+@use "pages/extra";
+
+/**
+ * 2. ARA DEFINIM LES CAPES
+ * Sass permet posar regles CSS (com @layer) després dels @use
+ */
+@layer reset, base, components, layouts, pages, utilities;
 
 /**
  * Do NOT include anything else in this file!
