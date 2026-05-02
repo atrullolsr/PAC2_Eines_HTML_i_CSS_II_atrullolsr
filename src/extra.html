@@ -6,67 +6,85 @@
     <meta name="viewport" content="width=device-width" />
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
     <!-- do not remove this line! -->
-    <title>UOC Boilerplate</title>
+    <title>Aura Negra | Jornades d'Artesania i Foc</title>
   </head>
   <body class="page-extra">
     <include src="./views/header.html"></include>
 
-<main class="container l-extra-content">
-  <h1 class="text-center mb-5 c-extra-title">Tallers d'Artesania a Verdú</h1>
+    <main class="container my-5 l-extra-viewport">
+      <h1 class="text-center mb-5 c-extra-title">Tallers i Ubicació</h1>
 
-  <section class="row g-4 mb-5">
-    <div class="col-md-6 col-lg-4 c-card-container">
-      <article class="c-workshop-card">
-        <div class="c-workshop-card__content">
-          <h3 class="c-workshop-card__title">Torn Tradicional</h3>
-          <p class="c-workshop-card__text"><strong>Impartit per:</strong> Enric Orobitg</p>
-          <p class="c-workshop-card__description">Aprèn a modelar el famós "silló" negre amb la tècnica del torn a peu.</p>
-          <span class="c-workshop-card__badge">Dissabtes matí</span>
+      <div class="row g-5">
+        <div class="col-lg-6">
+          <section class="mb-4">
+            <div class="d-flex flex-column gap-3 l-workshops-list">
+              <article class="c-workshop-card card shadow-sm border-0">
+                <div class="card-body p-2">
+                  <h3 class="c-workshop-card__title h5 card-title">Torn Tradicional</h3>
+                  <p class="c-workshop-card__description card-text small">Modelat del "silló" negre amb Enric Orobitg.</p>
+                  <span class="badge rounded-pill bg-light text-primary border">Dissabte</span>
+                </div>
+              </article>
+
+              <article class="c-workshop-card card shadow-sm border-0">
+                <div class="card-body p-2">
+                  <h3 class="c-workshop-card__title h5 card-title">Introducció Ceràmica</h3>
+                  <p class="c-workshop-card__description card-text small">Disseny modern i fang amb Carme Balada.</p>
+                  <span class="badge rounded-pill bg-light text-primary border">Dijous</span>
+                </div>
+              </article>
+
+              <article class="c-workshop-card card shadow-sm border-0">
+                <div class="card-body p-2">
+                  <h3 class="c-workshop-card__title h5 card-title">La Cuina i el Fang</h3>
+                  <p class="c-workshop-card__description card-text small">Demostració de cuina amb cassoles de terrissa.</p>
+                  <span class="badge rounded-pill bg-light text-primary border">Divendres</span>
+                </div>
+              </article>
+            </div>
+          </section>
+
+          <section class="c-registration p-2 bg-white rounded shadow-sm border-0">
+            <h2 class="h6 mb-3 fw-bold">Vols participar-hi?</h2>
+            <form name="workshop-registration" class="row g-2">
+              <div class="col-md-8">
+                <select class="form-select" id="workshop-select" aria-label="Selecciona taller">
+                  <option value="" selected disabled>Tria el teu taller...</option>
+                  <option value="torn">Torn Tradicional</option>
+                  <option value="ceramica">Ceràmica Negra</option>
+                  <option value="cuina">Cuina i Fang</option>
+                </select>
+              </div>
+              <div class="col-md-4">
+                <button type="submit" class="btn btn-primary w-100">Inscriure'm</button>
+              </div>
+            </form>
+          </section>
         </div>
-      </article>
-    </div>
 
-    <div class="col-md-6 col-lg-4 c-card-container">
-      <article class="c-workshop-card">
-        <div class="c-workshop-card__content">
-          <h3 class="c-workshop-card__title">Introducció a la Ceràmica</h3>
-          <p class="c-workshop-card__text"><strong>Impartit per:</strong> Carme Balada</p>
-          <p class="c-workshop-card__description">Transforma el fang en una peça d'art contemporani mitjançant el disseny.</p>
-          <span class="c-workshop-card__badge">Dijous tarda</span>
+        <div class="col-lg-6">
+          <div class="sticky-top">
+            <section class="c-location-info p-4 mb-4 bg-light rounded shadow-sm border-0">
+              <h2 class="h5 mb-3">On ens trobaràs?</h2>
+              <ul class="list-unstyled small mb-0">
+                <li class="mb-2"><i class="bi bi-geo-alt-fill text-primary"></i> Castell de Verdú, Plaça del Castell</li>
+                <li><i class="bi bi-clock-fill text-primary"></i> 10:00h a 20:00h</li>
+              </ul>
+            </section>
+
+            <section class="c-location-map rounded shadow-sm overflow-hidden border-0">
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5966.186327752139!2d1.1366150486758757!3d41.61049703508942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a69f4ecd2b69cf%3A0xd565165643cd80c1!2zMjUzNDAgVmVyZMO6LCBMw6lyaWRh!5e0!3m2!1ses!2ses!4v1777718492297!5m2!1ses!2ses"
+                width="100%" height="350" allowfullscreen="" loading="lazy">
+              </iframe>
+            </section>
+          </div>
         </div>
-      </article>
-    </div>
 
-    <div class="col-md-6 col-lg-4 c-card-container">
-      <article class="c-workshop-card">
-        <div class="c-workshop-card__content">
-          <h3 class="c-workshop-card__title">La Cuina i el Fang</h3>
-          <p class="c-workshop-card__text"><strong>Context:</strong> Forns tradicionals</p>
-          <p class="c-workshop-card__description">Demostració de cuina amb cassoles de terrissa i degustació de productes.</p>
-          <span class="c-workshop-card__badge">Diumenges</span>
-        </div>
-      </article>
-    </div>
-  </section>
-
-  <section class="c-registration shadow-sm">
-    <h2 class="c-registration__title">Inscriu-te a un taller</h2>
-    <form name="workshop-registration" class="c-registration__form">
-      <div class="mb-4">
-        <label for="workshop-select" class="form-label">Tria el teu taller</label>
-        <select class="form-select c-registration__select" id="workshop-select" name="workshop">
-          <option value="" selected disabled>Selecciona una opció...</option>
-          <option value="torn">Torn Tradicional</option>
-          <option value="ceramica">Ceràmica Negra</option>
-          <option value="cuina">Cuina i Fang</option>
-        </select>
       </div>
-      <button type="submit" class="btn c-btn-brand">Sol·licitar plaça</button>
-    </form>
-  </section>
-</main>
+    </main>
 
-<include src="./views/footer.html"></include>
+    <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
     <!-- do not remove this line! -->
   </body>

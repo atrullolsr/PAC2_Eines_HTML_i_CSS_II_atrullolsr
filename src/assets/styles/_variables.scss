@@ -4,27 +4,31 @@
 $font-family-sans-serif: 'Inter', system-ui, -apple-system, sans-serif;
 $font-family-serif: 'Playfair Display', 'Georgia', serif;
 
-// --- Colors Jornades d'Artesania ---
-$brand-primary: #8b5a2b;
-$brand-secondary: #d4af37;
-$brand-dark: #2c2c2c;
+// --- Colors Aura Negra ---
+$brand-primary: #8b5a2b; // Argila/Fang
+$brand-secondary: #d4af37; // Or/Foc
+$brand-dark: #1a1a1a;
 $brand-light: #fdfaf6;
+$brand-white: #fff;
 
-// --- NOVETAT: Colors moderns (Requisit Mòdul 3) ---
-// Definim un color accent fent servir OKLCH per a la pàgina de "Contingut Lliure"
-$modern-accent: oklch(70% 0.12 45); // Un taronja argila molt vibrant
-$modern-soft-bg: color-mix(in srgb, $brand-primary, transparent 90%);
+// --- Colors moderns (Requisit PAC) ---
+// Utilitzem color-mix per crear una variant més clara del fang
+$brand-primary-soft: color-mix(in srgb, $brand-primary, white 20%);
+$modern-accent: oklch(70% 0.12 45deg);
 
-// --- Variables que demana el Boilerplate / Bootstrap ---
-$uoc-corporate: $brand-dark;
-$uoc-masterbrand: $brand-primary;
-$uoc-bg: $brand-light;
-
-// --- Personalització de Bootstrap ---
+// --- Personalització de Bootstrap (Abans d'importar-lo) ---
 $primary: $brand-primary;
 $secondary: $brand-secondary;
 $body-bg: $brand-light;
 $body-color: $brand-dark;
+
+// Personalització de components (Requisit PAC)
+$navbar-dark-bg: $brand-dark;
+$nav-link-font-family: $font-family-sans-serif;
+$border-radius: 8px; // Cards i botons més suaus
+$btn-font-weight: 600;
+$card-border-width: 0; // Cards sense vora (més modern)
+$card-cap-bg: transparent;
 
 // --- Breakpoints ---
 $mq-mobile: 576px;
@@ -36,32 +40,29 @@ $mq-desktop: 1024px;
   --brand-secondary: #{$brand-secondary};
   --brand-dark: #{$brand-dark};
   --brand-light: #{$brand-light};
-
-  // Exemple de color modern amb OKLCH (Molt recomanat per la PAC)
-  --brand-accent: oklch(65% 0.15 40);
+  --brand-white: #{$brand-white};
+  --brand-accent: oklch(65% 0.15 40deg);
 }
 
-// --- FUNCIONS (Requisit obligatori de Sass) ---
-// Funció per passar de px a rem i fer el codi més accessible
+// --- FUNCIONS (Requisit Sass) ---
 @function toRem($value) {
-  $remValue: calc($value / 16) + rem;
-  @return $remValue;
+  @return calc($value / 16) + rem;
 }
 
-// Mixin per a títols amb estil artesanal
+// --- MIXINS (Requisit Sass) ---
 @mixin section-title($color: $brand-primary) {
   font-family: $font-family-serif;
   font-weight: 700;
   color: $color;
   position: relative;
-  margin-bottom: toRem(30);
+  margin-bottom: torem(30);
 
   &::after {
     content: '';
     display: block;
-    width: 60px;
-    height: 3px;
+    width: torem(60);
+    height: torem(3);
     background-color: $brand-secondary;
-    margin-top: toRem(10);
+    margin-top: torem(10);
   }
 }

@@ -1,138 +1,78 @@
-@use "../dependencies" as *;
+@use "../variables" as *;
 
 @layer pages {
-  .l-extra-content {
-    // Noves unitats: lvh (Large Viewport Height) per assegurar que el fons omple la pantalla
-    min-height: 80lvh;
-    padding: 4rem 1rem;
+  .l-extra-viewport {
+    min-height: calc(100vh - 300px);
+    margin: 20px auto;
+    height: auto;
+    overflow: visible;
 
-    .c-extra-title {
-      font-family: $font-family-serif;
-      font-size: clamp(2rem, 5vw, 3.5rem); // Fluid typography
-      color: oklch(25% 0.02 40); // Color fosc profund amb OKLCH
-      margin-bottom: 5rem;
+    @media (width >= 992px) {  max-height: 80vh; }
+
+    // --- MODIFICACIÓ CLAU: Contenidor de tallers ---
+    .l-workshops-list {
+      flex-grow: 0 !important; // Evita que els tallers empenyin el registre al fons
+      margin-bottom: 1.5rem;   // Espai controlat entre tallers i registre
     }
 
-    // Definició del contenidor per a les Container Queries
-    .c-card-container {
-      container-type: inline-size;
-      container-name: workshop;
+    .c-extra-title {
+      font-size: clamp(1.5rem, 3vw, 2.2rem);
+      color: oklch(25% 0.02 40deg);
     }
 
     .c-workshop-card {
-      background-color: #ffffff; // Blanc pur per contrastar amb el fons gris
-      border: 1px solid oklch(90% 0.02 40); // Vora suau amb un color gris clar
+      background-color: $brand-white !important;;
       border-radius: 12px;
-      height: 100%;
-      // Color-mix: Requisit PAC per barrejar colors moderns
-      border-top: 8px solid color-mix(in srgb, $brand-primary, transparent 20%);
-      box-shadow: 0 10px 30px oklch(0% 0 0 / 5%);
-      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      padding: 2rem;
-      display: flex;
-      flex-direction: column;
+      padding: 0.8rem;
+      border-left: 5px solid $brand-primary !important;
+      transition: transform 0.3s ease;
 
-      &:hover {
-        transform: translateY(-12px);
-        box-shadow: 0 20px 40px oklch(0% 0 0 / 12%);
-      }
+      &:hover { transform: scale(1.02); }
 
       &__title {
-        font-family: $font-family-serif;
+        font-size: 1.1rem;
         color: $brand-primary;
-        font-size: 1.5rem;
-        margin-bottom: 1rem;
+        margin: 0;
       }
 
       &__description {
-        font-size: 0.95rem;
-        color: oklch(40% 0.01 40);
-        line-height: 1.6;
-        flex-grow: 1;
-      }
-
-      &__badge {
-        display: inline-block;
-        padding: 0.5rem 1rem;
-        background-color: oklch(95% 0.02 40);
-        color: $brand-primary;
-        border-radius: 50px;
-        font-size: 0.8rem;
-        font-weight: bold;
-        text-transform: uppercase;
-        width: fit-content;
-        margin-top: 1.5rem;
-      }
-    }
-
-    // Aplicació de CONTAINER QUERIES (Mòdul 3)
-    @container workshop (max-width: 380px) {
-      .c-workshop-card {
-        padding: 1.5rem;
-        &__title { font-size: 1.2rem; }
-        &__badge { font-size: 0.7rem; padding: 0.3rem 0.8rem; }
-      }
-    }
-
-    // Formulari centrat i estilitzat
-    .c-registration {
-      max-width: 650px;
-      margin: 0 auto 0;
-      padding: clamp(1rem, 3cqi, 2rem);
-      background-color: white;
-      border-radius: 20px;
-      border: 1px solid oklch(90% 0.01 40);
-
-      &__title {
-        text-align: center;
-        font-family: $font-family-serif;
-        margin-bottom: 2.5rem;
+        font-size: 0.85rem;
+        margin: 0 !important;
         color: $brand-dark;
       }
 
-      .form-label {
-        font-weight: 600;
-        margin-bottom: 0.8rem;
+      &__badge {
+        font-size: 0.65rem;
+        font-weight: bold;
+        text-transform: uppercase;
+        color: $brand-primary;
       }
+    }
+
+    .c-registration {
+      background: oklch(98% 0.01 40deg);
+      border: 1px solid oklch(90% 0.01 40deg);
+      border-radius: 12px;
+      padding: 1.2rem;
+
+      // Eliminem mt-auto (si el tenies a l'HTML) i controlem el marge superior
+      margin-top: 0;
+      width: 100%;
 
       .c-btn-brand {
-        // 1. Estructura i mida
-        width: 100%;
-        padding: 1.2rem 2rem;
-        margin-top: 1.5rem;
-
-        // 2. Estil visual "Artesanal"
-        background-color: $brand-light;
-        color: $brand-primary;
+        background-color: $brand-dark !important;
+        color: $brand-light !important;
         border: none;
-        border-radius: 8px; // Un radi suau, no totalment rodó
-
-        // 3. Tipografia (Requisit PAC: ús de variables)
-        font-family: $font-family-sans-serif;
-        font-weight: 700;
-        text-transform: uppercase;
-        letter-spacing: 2px;
-        font-size: 1rem;
-
-        // 4. Transició i efectes moderns
-        transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-        cursor: pointer;
-        box-shadow: 0 4px 12px color-mix(in srgb, $brand-primary, transparent 70%);
-
-        &:hover {
-          // Pugem una mica el botó i intensifiquem el color
-          transform: translateY(-3px);
-          background-color: oklch(45% 0.15 40); // Un taronja/marró més intens amb OKLCH
-          box-shadow: 0 8px 20px color-mix(in srgb, $brand-primary, transparent 50%);
-          filter: brightness(1.1);
-        }
-
-        &:active {
-          // Efecte de prémer
-          transform: translateY(-1px);
-          box-shadow: 0 2px 8px color-mix(in srgb, $brand-primary, transparent 40%);
-        }
+        font-size: 0.8rem;
+        letter-spacing: 1px;
+        box-shadow: 0 4px 10px color-mix(in srgb, $brand-primary, transparent 70%);
       }
+    }
+
+    .c-location-map {
+      flex-grow: 0 !important; // Fem que sigui el MAPA el que s'estiri per omplir la dreta
+      min-height: 250px;
+      iframe { filter: grayscale(0.2); }
     }
   }
 }

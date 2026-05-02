@@ -3,11 +3,10 @@
 @layer pages {
   .l-article-page {
     background-color: $brand-light; // Un blanc "paper" molt elegant
-    color: oklch(20% 0.01 40);
+    color: oklch(20% 0.01 40deg);
 
     .c-main-article {
       :is(h1, h2, h3, h4) {
-        font-family: $font-family-serif;
         color: $brand-dark;
         margin-top: 2rem;
       }
@@ -17,7 +16,7 @@
         margin: 3rem 0;
         padding: 1rem;
         background: white;
-        box-shadow: 0 10px 40px oklch(0% 0 0 / 5%);
+        box-shadow: 0 10px 40px oklch(0% 0 0deg / 5%);
         border-radius: 8px;
 
         img {
@@ -42,11 +41,13 @@
           line-height: 1.1;
           margin-bottom: 1rem;
         }
+
         &__subtitle {
           font-size: 1.25rem;
           opacity: 0.7;
           font-style: italic;
         }
+
         &__meta {
           margin-top: 2rem;
           font-size: 0.9rem;
@@ -59,9 +60,10 @@
       .c-article-lead {
         font-size: 1.4rem;
         line-height: 1.6;
-        color: oklch(45% 0.05 40);
+        color: oklch(45% 0.05 40deg);
         margin: 3rem 0;
         font-weight: 300;
+
         // Lletra capital (detall de qualitat)
         &::first-letter {
           float: left;
@@ -69,7 +71,6 @@
           line-height: 0.8;
           margin-right: 10px;
           color: $brand-primary;
-          font-family: $font-family-serif;
         }
       }
 
@@ -87,9 +88,11 @@
       .c-article-list {
         list-style: none;
         padding: 0;
+
         li {
           margin-bottom: 1rem;
           padding-left: 2rem;
+
           &::before {
             content: '●';
             color: $brand-primary;
@@ -104,14 +107,29 @@
     .c-article-sidebar {
       position: sticky;
       top: 100px;
+
       .c-sidebar-card {
         background: white;
         padding: 2rem;
-        border: 1px solid oklch(90% 0.01 40);
+        border: 1px solid oklch(90% 0.01 40deg);
         border-radius: 12px;
-        img { margin: 1.5rem 0; border-radius: 6px; width: -webkit-fill-available; }
-        h4 { margin-top: 0; color: $brand-primary; font-size: 1.1rem; }
-        p { font-size: 0.85rem; line-height: 1.6; }
+
+        img {
+          margin: 1.5rem 0;
+          border-radius: 6px;
+          width: -webkit-fill-available;
+        }
+
+        h4 {
+          margin-top: 0;
+          color: $brand-primary;
+          font-size: 1.1rem;
+        }
+
+        p {
+          font-size: 0.85rem;
+          line-height: 1.6;
+        }
       }
     }
   }

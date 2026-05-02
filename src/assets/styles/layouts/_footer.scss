@@ -2,61 +2,91 @@
 
 @layer layouts {
   .main-footer {
-    padding: toRem(25) 0 toRem(10); 
-    background-color: #1a1a1a !important;
-    color: rgba(255, 255, 255, 0.6);
-    border-top: 3px solid $brand-primary;
+    padding: torem(20) 0 torem(10);
+    background-color: #1a1a1a;
+    color: rgba(white, 0.7);
+    border-top: 4px solid var(--bs-primary);
+
+    // Gestió del responsive per columnes
+    .row {
+      @include media-breakpoint-down(md) {
+        text-align: center;
+        justify-content: center;
+      }
+    }
 
     &__logo {
-      color: $brand-primary;
-      font-family: $font-family-serif;
-      font-size: toRem(18);
-      margin-bottom: toRem(8);
+      color: var(--bs-light) !important;
+      font-size: torem(26);
+      font-weight: 700;
+      margin-bottom: torem(10);
+
+      &-icon {
+        font-weight: 900;
+        color: var(--bs-primary)
+      }
     }
 
     &__description {
-      font-size: toRem(12);
-      line-height: 1.4;
-    }
+      font-size: torem(14);
+      line-height: 1.6;
+      max-width: 30ch; // Evita línies massa llargues
 
-    &__subtitle {
-      color: $brand-light;
-      font-size: toRem(13);
-      text-transform: uppercase;
-      margin-bottom: toRem(12);
+      @include media-breakpoint-down(md) { margin: 0 auto torem(20); }
     }
 
     &__list {
       list-style: none;
-      padding: 0;
+      padding: 0 !important;
       margin: 0;
-      font-size: toRem(14);
 
+      // MENU HORITZONTAL
       &--menu {
         display: flex;
-        flex-direction: row;
-        gap: toRem(25);
+        flex-flow: row wrap; // Per seguretat en pantalles molt petites
+        gap: torem(25);
+        text-transform: uppercase;
+        align-items: center;
+
+        a { text-decoration: none !important; }
+
+        @include media-breakpoint-down(md) {
+          justify-content: center;
+          margin-bottom: torem(30);
+        }
       }
 
-      // Aquesta és la part que vols VERTICAL (Contacte)
+      // CONTACTE VERTICAL
       &--contact {
         display: flex;
         flex-direction: column;
-        gap: toRem(8);
 
         li {
           display: flex;
           align-items: center;
-          gap: 10px;
-          i { color: $brand-primary; font-size: toRem(13); }
+          font-size: torem(14);
+
+          @include media-breakpoint-down(md) { justify-content: center; }
+
+          i {
+            color: var(--bs-light);
+            font-size: torem(16);
+            width: torem(20); // Alinea els textos verticalment
+          }
         }
       }
     }
 
     &__link {
-      color: inherit;
+      color: var(--bs-light) !important;
       text-decoration: none;
-      &:hover { color: $brand-light !important; }
+      transition: all 0.3s ease;
+      position: relative;
+
+      &:hover {
+        color: var(--bs-primary) !important;
+        &::after { width: 100%; }
+      }
     }
   }
 }

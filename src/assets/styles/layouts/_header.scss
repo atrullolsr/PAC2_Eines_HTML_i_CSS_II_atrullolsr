@@ -18,10 +18,11 @@
 
       &__list {
         text-align: right;
+
         .nav-link {
-          color: rgba(255, 255, 255, 0.8) !important;
+          color: rgb(255 255 255 / 80%) !important;
           text-transform: uppercase;
-          font-size: toRem(13);
+          font-size: torem(13);
           font-weight: 500;
           letter-spacing: 1px;
 
@@ -44,9 +45,9 @@ body.page-extra .nav-link--extra {
 }
 
 // Ajust per al menú desplegable en mòbil
-@media (max-width: 991px) {
+@media (width <= 991px) {
   .navbar-collapse {
-    //background-color: color-mix(in srgb, $brand-dark, white 5%);
+    // background-color: color-mix(in srgb, $brand-dark, white 5%);
     padding: 1rem;
     border-radius: 8px;
     margin-top: 10px;

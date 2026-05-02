@@ -10,17 +10,16 @@
 @forward "variables";
 
 // 2. Després les importem aquí mateix per si Bootstrap les necessita
+
 @use "variables" as *;
 
 // 1. Definim el path. La tilde (~) és el que Parcel necessita
 // per saber que ha d'anar a buscar dins de node_modules.
 $fa-font-path: "../webfonts";
 
-// 2. Importem FontAwesome abans que Bootstrap
-// per evitar conflictes de variables si n'hi hagués.
-@import "~@fortawesome/fontawesome-free/scss/fontawesome";
-@import "~@fortawesome/fontawesome-free/scss/solid";
-@import "~@fortawesome/fontawesome-free/scss/brands";
+// 2. Importar Bootstrap Icons
+@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+
 
 // 3. Importem Bootstrap
 @import "bootstrap/scss/bootstrap";

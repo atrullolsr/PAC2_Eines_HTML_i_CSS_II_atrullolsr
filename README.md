@@ -1,67 +1,86 @@
-# UOC Boilerplate
+# Aura Negra: Jornades d'Artesania i Foc 🏺🔥
 
-UOC Boilerplate is a starter template for the HTML and CSS Tools courses from the [Master's Program in Multimedia Applications](https://estudis.uoc.edu/ca/masters-universitaris/aplicacions-multimedia/presentacio) and the [Master's Program in Web App and Website Development](https://estudis.uoc.edu/ca/masters-universitaris/desenvolupament-llocs-aplicacions-web/presentacio) at the [Universitat Oberta de Catalunya](https://www.uoc.edu). It aims to provide a basic, modern frontend web development starter pack based on Parcel and including a Sass compiler, an ES6 transpiler, minifiers, an image transformer, and development tools.
+Aquest projecte és el resultat de la **PAC2** de l'assignatura **Eines HTML i CSS II** del Màster Universitari de Disseny i Desenvolupament Web de la **UOC**. Es tracta d'un lloc web modern, responsive i optimitzat que promociona unes jornades d'artesania i terrissa negra a la vila de Verdú.
 
-This is the 3.x version of UOC Boilerplate, available since the UOC 2020-2 semester.
+---
 
-## Requirements
+## 🔗 Enllaços del Projecte
 
-[Node.js](http://nodejs.org/) >= 18.x
+* **URL Netlify:** [https://verduartfangifoc.netlify.app](https://verduartfangifoc.netlify.app)
+* **Repositori GitHub:** [https://github.com/atrullolsr/PAC2_Eines_HTML_i_CSS_II_atrullolsr](https://github.com/atrullolsr/PAC2_Eines_HTML_i_CSS_II_atrullolsr)
 
-## Getting started
+---
 
-Clone this repository with `git clone`, or download a .zip file using the top right green button.
+## 🚀 Tecnologies i Eines utilitzades
 
-Using the Terminal, navigate to the project folder and run `npm install`.
+* **UOC Boilerplate (v3.13.0):** Base del projecte per a un entorn de desenvolupament professional.
+* **Sass (SCSS):** Ús avançat de preprocessament amb variables, mixins, funcions, parcials i nesting.
+* **Bootstrap 5:** Implementat i personalitzat mitjançant variables Sass per adaptar-lo a la identitat visual de la marca.
+* **Parcel:** Bundler per a la gestió d'actius i compilació del codi.
+* **Stylelint:** Linter per a la validació d'estils i garantia de qualitat de codi (Clean Code).
 
-## Features
+---
 
-- Uses [Parcel v2](https://parceljs.org) module bundler.
-- NPM scripts for fast development and production build (see Commands below).
+## 🛠️ Requisits Tècnics Implementats
 
-### Stylesheets
+### 1. Maquetació i Estructura
 
-- [Sass/SCSS](https://sass-lang.com) to CSS compilation (`@parcel/transformer-sass`).
-- Transpilation of modern CSS synthax to support older bvrowsers, based on `browserslist`, including vendor prefixing and synthax lowering, with [PostCSS](https://postcss.org/) (`@parcel/transformer-postcss`).
-- Minification and optimization of CSS files on production builds with [`lightningcss`](https://github.com/parcel-bundler/lightningcss) (`@parcel/optimizer-css`).
+* **CSS Grid (Home):** La pàgina principal s'ha dissenyat com un pòster promocional utilitzant una graella de 12 columnes. S'ha implementat la directiva `@supports` per oferir un fallback (Flexbox) en navegadors antics.
+* **Flexbox (Speakers):** La secció de ponents utilitza una retícula flexible sense dependre de les classes `.col-*` de Bootstrap, complint el requisit de maquetació nativa.
+* **Cascading Layers (@layer):** Organització del CSS en capes (`base`, `layouts`, `components`) per a un control total de la prioritat i la cascada.
+* **Container Queries:** Implementades per adaptar els components segons la mida del seu contenidor pare i no només del viewport.
 
-### HTML
+### 2. CSS Modern i Selectors
 
-- Minification and optimization of CSS files on production builds [`htmlnano`](https://github.com/posthtml/htmlnano) (`@parcel/optimizer-htmlnano`).
-- [PostHTML](https://github.com/posthtml/posthtml) (`@parcel/transformer-posthtml`) features:
-  - Include partial HTML files with [`posthtml-include`](https://github.com/posthtml/posthtml-include).
+* **Selectors funcionals:** Ús de `:has()`, `:is()` i `:where()` a la pàgina d'article per a una estilització intel·ligent dels elements HTML (`blockquote`, `figure`, llistes).
+* **Noves unitats i colors:** Ús de colors en format `oklch()`, l'eina `color-mix()` i unitats de viewport dinàmiques (`svh`, `dvh`).
 
-### Scripts
+### 3. Metodologia
 
-- Transpilation of modern JavaScript synthax to support older browsers, based on `browserslist`, with with [Babel](https://babeljs.io/) (`@parcel/transformer-babel`).
-- Minification and optimization of JS code with [SWC](https://swc.rs/) (`@parcel/optimizer-swc`).
+S'ha seguit la metodologia **BEM (Block Element Modifier)** per a la nomenclatura de classes i un enfocament **Mobile First** per garantir la total responsivitat del lloc web.
 
-### Images
+---
 
-- Image transformation with [`sharp`](https://sharp.pixelplumbing.com/) ([`@parcel/transformer-image`](https://parceljs.org/recipes/image/)).
+## 📂 Estructura de Carpetes
 
-### Development
+* `/src`: Codi font original (HTML, SCSS, JS).
+  * `/assets/styles`: Estils organitzats en parcials de Sass.
+  * `/views`: Fitxers HTML parcials (header, footer).
+* `/dist`: Codi optimitzat i compilat per a producció (generat mitjançant `npm run build`).
 
-- Development server launch and live reloading on file changes.
-- Friendly error reporting.
+---
 
-## How to use this boilerplate
+## ⚙️ Instruccions d'ús
 
-Content lives inside the `src/` folder. If you do not want to change the configuration or are unsure about what you are doing, do not edit files outside the `src/` folder.
+1. **Instal·lar dependències:**
 
-Always run the following commands during the development stage and for production builds. Please note that it is expected that all projects built with this boilerplate are compiled using `npm run build` before they are published.
+    ```bash
+    npm install
+    ```
 
-### Commands
+2. **Mode desenvolupament (Live Server):**
 
-| Command         | Description                                                                                                                                                                                                                                                                                                                                                         |
-| --------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| `npm run dev`   | Runs a local web server for development and opens the browser to display it. Automatically compiles styles and scripts whenever a file in `src/` is changed, and live reloads the browser. This is what _must be run_ on the development stage.                                                                                                                     |
-| `npm run build` | Compiles and minifies and optimizes the files in the assets folder. The generated compiled and optimized files are located in the `dist/` folder. This is what _must be run_ before publishing the project. This is also the build command to be run by external deployment services such as Netlify. The publishable files are then located in the `dist/` folder. |
-| `npm run clean` | Deletes the current `/dist` folder and cache folders.                                                                                                                                                                                                                                                                                                               |
-| `npm run test`  | Displays a success message if everything is working as expected.                                                                                                                                                                                                                                                                                                    |
+    ```bash
+    npm run dev
+    ```
 
-## Need help? / Want to help out?
+3. **Validar estils (Linter):**
 
-Feel free to create a [new issue](https://github.com/uoc-advanced-html-css/uoc-boilerplate/issues/new/) or drop me a line at jorditarrida@uoc.edu.
+    ```bash
+    npm run lint
+    ```
 
-Are you using this Boilerplate for your projects or for educational purposes? I would love to hear about it!
+4. **Compilar per a producció:**
+
+    ```bash
+    npm run build
+    ```
+
+---
+
+## 📝 Decisions de Disseny
+
+El disseny visual s'ha centrat en el concepte **Aura Negra**, utilitzant una paleta de colors terrosos i foscos que evoquen la ceràmica característica de Verdú. La tipografia combina estils sans-serif moderns amb tocs serif elegants per als títols, buscant un equilibri entre tradició i innovació.
+
+**Autor:** Albert Trullols
+**Màster en Disseny i Desenvolupament Web - UOC**
