@@ -4,51 +4,55 @@
   .main-footer {
     padding: torem(20) 0 torem(10);
     background-color: #1a1a1a;
-    color: rgba(white, 0.7);
+    color: rgb(255 255 255 / 70%); // Notació moderna per evitar error de linter
     border-top: 4px solid var(--bs-primary);
 
     // Gestió del responsive per columnes
     .row {
       @include media-breakpoint-down(md) {
-        text-align: center;
         justify-content: center;
+        text-align: center;
       }
     }
 
     &__logo {
+      margin-bottom: torem(10);
       color: var(--bs-light) !important;
       font-size: torem(26);
       font-weight: 700;
-      margin-bottom: torem(10);
 
       &-icon {
+        color: var(--bs-primary);
         font-weight: 900;
-        color: var(--bs-primary)
       }
     }
 
     &__description {
+      max-width: 30ch;
       font-size: torem(14);
       line-height: 1.6;
-      max-width: 30ch; // Evita línies massa llargues
 
-      @include media-breakpoint-down(md) { margin: 0 auto torem(20); }
+      @include media-breakpoint-down(md) {
+        margin: 0 auto torem(20);
+      }
     }
 
     &__list {
-      list-style: none;
       padding: 0 !important;
       margin: 0;
+      list-style: none;
 
       // MENU HORITZONTAL
       &--menu {
         display: flex;
-        flex-flow: row wrap; // Per seguretat en pantalles molt petites
-        gap: torem(25);
-        text-transform: uppercase;
+        flex-flow: row wrap;
+        gap: torem(25); // Això manté l'espai entre els links
         align-items: center;
+        text-transform: uppercase;
 
-        a { text-decoration: none !important; }
+        a {
+          text-decoration: none !important;
+        }
 
         @include media-breakpoint-down(md) {
           justify-content: center;
@@ -66,26 +70,31 @@
           align-items: center;
           font-size: torem(14);
 
-          @include media-breakpoint-down(md) { justify-content: center; }
+          @include media-breakpoint-down(md) {
+            justify-content: center;
+          }
 
           i {
+            width: torem(20);
             color: var(--bs-light);
             font-size: torem(16);
-            width: torem(20); // Alinea els textos verticalment
           }
         }
       }
     }
 
     &__link {
+      position: relative;
       color: var(--bs-light) !important;
       text-decoration: none;
       transition: all 0.3s ease;
-      position: relative;
 
       &:hover {
         color: var(--bs-primary) !important;
-        &::after { width: 100%; }
+
+        &::after {
+          width: 100%;
+        }
       }
     }
   }

@@ -45,7 +45,7 @@ $mq-desktop: 1024px;
 }
 
 // --- FUNCIONS (Requisit Sass) ---
-@function toRem($value) {
+@function torem($value) {
   @return calc($value / 16) + rem;
 }
 
