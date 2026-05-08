@@ -6,20 +6,15 @@
 // @import "some-node-module";
 // @import "@some-company/some-node-module";
 
-// 1. Primer de tot, "enviem" les variables perquè qui importi dependencies les vegi
+// 1. Enviem i usem les variables (Imprescindible perquè Bootstrap les vegi)
 @forward "variables";
-
-// 2. Després les importem aquí mateix per si Bootstrap les necessita
-
 @use "variables" as *;
 
-// 1. Definim el path. La tilde (~) és el que Parcel necessita
-// per saber que ha d'anar a buscar dins de node_modules.
+// 2. Configuració de paths per a fonts
 $fa-font-path: "../webfonts";
 
-// 2. Importar Bootstrap Icons
+// 3. Encapsulem totes les dependències externes en la capa de prioritat baixa
 @import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
 
-
-// 3. Importem Bootstrap
+// Importar Bootstrap (NOMÉS AQUÍ, dins de la capa)
 @import "bootstrap/scss/bootstrap";

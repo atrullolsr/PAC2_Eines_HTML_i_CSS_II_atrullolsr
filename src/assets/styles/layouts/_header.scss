@@ -4,30 +4,30 @@
   .main-header {
     .main-nav {
       // Forcem el color de fons de la teva marca
-      background-color: $brand-dark !important;
-      border-bottom: 2px solid $brand-primary;
-      padding: 0.75rem 0;
+      background-color: var(--bs-dark) !important;
+      border-bottom: 5px solid var(--bs-primary);
+      padding: torem(20) 0 torem(10);
+      color: var(--bs-light) !important;
 
       &__logo {
         font-weight: bold;
         text-decoration: none;
-        
-        &-text { color: $brand-light; }
-        &-accent { color: $brand-primary; }
+
+        &-text { color: var(--bs-light); }
+        &-accent { color: var(--bs-primary); }
       }
 
       &__list {
         text-align: right;
 
         .nav-link {
-          color: rgb(255 255 255 / 80%) !important;
           text-transform: uppercase;
           font-size: torem(13);
           font-weight: 500;
           letter-spacing: 1px;
 
           &:hover {
-            color: $brand-primary !important;
+            color: var(--bs-primary) !important;
           }
         }
       }
@@ -47,7 +47,6 @@ body.page-extra .nav-link--extra {
 // Ajust per al menú desplegable en mòbil
 @media (width <= 991px) {
   .navbar-collapse {
-    // background-color: color-mix(in srgb, $brand-dark, white 5%);
     padding: 1rem;
     border-radius: 8px;
     margin-top: 10px;

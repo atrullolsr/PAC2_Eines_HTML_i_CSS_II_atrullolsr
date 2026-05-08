@@ -3,89 +3,105 @@
 <html lang="ca">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <link rel="stylesheet" type="text/css" href="./assets/styles/main.scss" />
-    <!-- do not remove this line! -->
-    <title>Aura Negra | Jornades d'Artesania i Foc</title>
+    <title>Agenda | Aura Negra</title>
   </head>
   <body class="page-extra">
     <include src="./views/header.html"></include>
 
-    <main class="container my-5 l-extra-viewport">
-      <h1 class="text-center mb-5 c-extra-title">Tallers i Ubicació</h1>
+    <main class="l-extra-layout">
+      <header class="l-extra-layout__header">
+        <h1 class="c-title-main text-uppercase">Agenda del Cap de Setmana</h1>
+      </header>
 
-      <div class="row g-5">
-        <div class="col-lg-6">
-          <section class="mb-4">
-            <div class="d-flex flex-column gap-3 l-workshops-list">
-              <article class="c-workshop-card card shadow-sm border-0">
-                <div class="card-body p-2">
-                  <h3 class="c-workshop-card__title h5 card-title">Torn Tradicional</h3>
-                  <p class="c-workshop-card__description card-text small">Modelat del "silló" negre amb Enric Orobitg.</p>
-                  <span class="badge rounded-pill bg-light text-primary border">Dissabte</span>
+      <div class="l-extra-grid">
+        <div class="l-column-content">
+          <section class="c-workshops-container">
+
+            <div class="c-day-group">
+              <h2 class="c-day-header">Dissabte, 15 de Maig</h2>
+
+              <article class="c-workshop-card c-workshop-card--compact">
+                <div class="c-workshop-card__body">
+                  <div class="c-workshop-card__time">10:30h</div>
+                  <div class="c-workshop-card__info">
+                    <h4 class="c-workshop-card__title">La Pell de l'Edifici <span class="c-type">| Xerrada</span></h4>
+                    <p class="c-workshop-card__text">Antoni Cumella (Arquitectura). 📍 Castell</p>
+                  </div>
                 </div>
               </article>
 
-              <article class="c-workshop-card card shadow-sm border-0">
-                <div class="card-body p-2">
-                  <h3 class="c-workshop-card__title h5 card-title">Introducció Ceràmica</h3>
-                  <p class="c-workshop-card__description card-text small">Disseny modern i fang amb Carme Balada.</p>
-                  <span class="badge rounded-pill bg-light text-primary border">Dijous</span>
+              <article class="c-workshop-card c-workshop-card--compact">
+                <div class="c-workshop-card__body">
+                  <div class="c-workshop-card__time">12:30h</div>
+                  <div class="c-workshop-card__info">
+                    <h4 class="c-workshop-card__title">L'Evolució del Silló <span class="c-type">| Xerrada</span></h4>
+                    <p class="c-workshop-card__text">Enric Orobitg (Tradició/Disseny). 📍 Castell</p>
+                  </div>
                 </div>
               </article>
 
-              <article class="c-workshop-card card shadow-sm border-0">
-                <div class="card-body p-2">
-                  <h3 class="c-workshop-card__title h5 card-title">La Cuina i el Fang</h3>
-                  <p class="c-workshop-card__description card-text small">Demostració de cuina amb cassoles de terrissa.</p>
-                  <span class="badge rounded-pill bg-light text-primary border">Divendres</span>
+              <article class="c-workshop-card c-workshop-card--compact">
+                <div class="c-workshop-card__body">
+                  <div class="c-workshop-card__time">17:00h</div>
+                  <div class="c-workshop-card__info">
+                    <h4 class="c-workshop-card__title">Demostració de Torn i Foc <span class="c-type">| Taller</span></h4>
+                    <p class="c-workshop-card__text">Pràctica amb l'equip del Taller Orobitg.</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+
+            <div class="c-day-group">
+              <h2 class="c-day-header">Diumenge, 16 de Maig</h2>
+
+              <article class="c-workshop-card c-workshop-card--compact">
+                <div class="c-workshop-card__body">
+                  <div class="c-workshop-card__time">11:00h</div>
+                  <div class="c-workshop-card__info">
+                    <h4 class="c-workshop-card__title">Minimalisme i Buit <span class="c-type">| Xerrada</span></h4>
+                    <p class="c-workshop-card__text">Carme Balada (Art Conceptual). 📍 Castell</p>
+                  </div>
+                </div>
+              </article>
+
+              <article class="c-workshop-card c-workshop-card--compact">
+                <div class="c-workshop-card__body">
+                  <div class="c-workshop-card__time">12:30h</div>
+                  <div class="c-workshop-card__info">
+                    <h4 class="c-workshop-card__title">Creació de Formes Nues <span class="c-type">| Taller</span></h4>
+                    <p class="c-workshop-card__text">Taller experimental amb Carme Balada.</p>
+                  </div>
                 </div>
               </article>
             </div>
           </section>
+        </div>
 
-          <section class="c-registration p-2 bg-white rounded shadow-sm border-0">
-            <h2 class="h6 mb-3 fw-bold">Vols participar-hi?</h2>
-            <form name="workshop-registration" class="row g-2">
-              <div class="col-md-8">
-                <select class="form-select" id="workshop-select" aria-label="Selecciona taller">
-                  <option value="" selected disabled>Tria el teu taller...</option>
-                  <option value="torn">Torn Tradicional</option>
-                  <option value="ceramica">Ceràmica Negra</option>
-                  <option value="cuina">Cuina i Fang</option>
-                </select>
-              </div>
-              <div class="col-md-4">
-                <button type="submit" class="btn btn-primary w-100">Inscriure'm</button>
-              </div>
-            </form>
+        <div class="l-column-map">
+          <section class="c-info-box">
+            <div class="c-info-box__main">
+              <h2 class="c-info-box__title text-uppercase">Seu Central</h2>
+              <h3 class="c-info-box__name">Castell de Verdú</h3>
+            </div>
+
+            <div class="c-info-box__detail">
+              <p class="c-info-box__address">
+                Plaça del Castell, s/n. Verdú (Urgell)
+              </p>
+              <span class="c-info-box__tag">Tots els tallers a < 5 min</span>
+            </div>
+          </section>
+
+          <section class="c-map-frame">
+            <div id="map"></div>
           </section>
         </div>
-
-        <div class="col-lg-6">
-          <div class="sticky-top">
-            <section class="c-location-info p-4 mb-4 bg-light rounded shadow-sm border-0">
-              <h2 class="h5 mb-3">On ens trobaràs?</h2>
-              <ul class="list-unstyled small mb-0">
-                <li class="mb-2"><i class="bi bi-geo-alt-fill text-primary"></i> Castell de Verdú, Plaça del Castell</li>
-                <li><i class="bi bi-clock-fill text-primary"></i> 10:00h a 20:00h</li>
-              </ul>
-            </section>
-
-            <section class="c-location-map rounded shadow-sm overflow-hidden border-0">
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5966.186327752139!2d1.1366150486758757!3d41.61049703508942!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12a69f4ecd2b69cf%3A0xd565165643cd80c1!2zMjUzNDAgVmVyZMO6LCBMw6lyaWRh!5e0!3m2!1ses!2ses!4v1777718492297!5m2!1ses!2ses"
-                width="100%" height="350" allowfullscreen="" loading="lazy">
-              </iframe>
-            </section>
-          </div>
-        </div>
-
       </div>
     </main>
 
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>
-    <!-- do not remove this line! -->
   </body>
 </html>

@@ -29,6 +29,9 @@ $border-radius: 8px; // Cards i botons més suaus
 $btn-font-weight: 600;
 $card-border-width: 0; // Cards sense vora (més modern)
 $card-cap-bg: transparent;
+$carousel-control-color: $brand-secondary;
+$carousel-indicator-width: 40px;
+$carousel-transition-duration: 1.5s;
 
 // --- Breakpoints ---
 $mq-mobile: 576px;

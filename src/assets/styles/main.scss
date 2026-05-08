@@ -1,38 +1,20 @@
-/**
- * Use this file to import partials.
- * Do not include SCSS code in this file.
- */
-
-/**
- * 1. IMPORT DEPENDENCIES
- * Solen incloure Bootstrap i variables globals.
+ /**
+ * 1. TOTS ELS @USE A DALT DE TOT
+ * Sass no deixa posar res (excepte comentaris) abans d'això.
  */
 @use "dependencies";
-
-/**
- * IMPORT RESET & BASE
- */
 @use "base/reset";
 
-/**
- * IMPORT LAYOUTS / PAGES */
-
-// Components globals
 @use "layouts/header";
 @use "layouts/footer";
-
-// Estils específics per pàgina
 @use "pages/home";
 @use "pages/speakers";
 @use "pages/article";
 @use "pages/extra";
 
 /**
- * 2. ARA DEFINIM LES CAPES
- * Sass permet posar regles CSS (com @layer) després dels @use
+ * 2. ARA DEFINIM L'ORDRE DE LES CAPES
+ * Com que els @use ja estan carregats, ara ja podem
+ * establir la jerarquia per al navegador.
  */
-@layer reset, base, components, layouts, pages, utilities;
-
-/**
- * Do NOT include anything else in this file!
- */
+@layer reset, base, layouts, pages, utilities;

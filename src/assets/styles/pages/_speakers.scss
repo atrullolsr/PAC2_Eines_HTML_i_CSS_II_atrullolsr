@@ -2,12 +2,10 @@
 
 @layer layouts {
   .l-speakers-grid {
-    // REQUISIT PAC: Maquetat amb FLEX
     display: flex;
-    flex-wrap: wrap; // Perquè baixin a la següent línia en mòbil
+    flex-wrap: wrap;
     gap: 2.5rem;
-    justify-content: center; // Centrem les cards si en sobren
-    padding: 2rem 0;
+    justify-content: center;
   }
 }
 
@@ -33,12 +31,12 @@
 
     &__image-wrapper {
       width: 100%; // Ocupa tot l'ample de la card
-      height: 325px;
+      height: 300px;
       overflow: hidden;
 
       img {
         width: 100%;
-        height: 325px !important;
+        height: 100% !important;
         object-fit: cover;
         object-position: top; // Centra el focus de la foto
       }
@@ -60,15 +58,8 @@
     }
 
     &__talk-title {
-      text-transform: uppercase;
       letter-spacing: 0.5px;
       color: $brand-primary;
-    }
-
-    &__bio {
-      font-size: 0.95rem;
-      opacity: 85%;
-      line-height: 1.4;
     }
   }
 }

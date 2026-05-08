@@ -8,7 +8,7 @@
     <!-- do not remove this line! -->
     <title>Aura Negra | Jornades d'Artesania i Foc</title>
   </head>
-  <body class="page-extra">
+  <body class="page-home">
     <include src="./views/header.html"></include>
 
     <main class="l-poster-wrapper">
@@ -22,18 +22,58 @@
         </header>
 
         <div class="c-poster__image-box">
-          <img src="assets/images/verdu-poster.jpg" alt="Terrissa de Verdú" class="c-poster__img">
+          <div id="carouselAuraNegra" data-bs-interval="6000" class="carousel slide carousel-fade" data-bs-ride="carousel">
+
+            <div class="carousel-indicators">
+              <button type="button" data-bs-target="#carouselAuraNegra" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+              <button type="button" data-bs-target="#carouselAuraNegra" data-bs-slide-to="1" aria-label="Slide 2"></button>
+              <button type="button" data-bs-target="#carouselAuraNegra" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            </div>
+
+            <div class="carousel-inner">
+              <div class="carousel-item active">
+                <img src="assets/images/pottery-hands.jpg" class="d-block w-100 c-poster__img" alt="Artesa treballant el fang">
+                <div class="carousel-caption d-none d-md-block text-end">
+                  <p class="small opacity-75">Foto: Monika Bienert - monika_g</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/brick-oven-fire.jpg" class="d-block w-100 c-poster__img" alt="Horno de ladrillos con fuego">
+                <div class="carousel-caption d-none d-md-block text-end">
+                  <p class="small opacity-75">Foto: Jay Gajjar - jaygajjar</p>
+                </div>
+              </div>
+              <div class="carousel-item">
+                <img src="assets/images/taller-sambola.jpg" class="d-block w-100 c-poster__img" alt="Taller Sambolla">
+                <div class="carousel-caption d-none d-md-block text-end">
+                  <p class="small opacity-75">Foto: José Miguel Barrantes Martín</p>
+                </div>
+              </div>
+            </div>
+
+            <button class="carousel-control-prev" type="button" data-bs-target="#carouselAuraNegra" data-bs-slide="prev">
+              <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Anterior</span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#carouselAuraNegra" data-bs-slide="next">
+              <span class="carousel-control-next-icon" aria-hidden="true"></span>
+              <span class="visually-hidden">Següent</span>
+            </button>
+          </div>
         </div>
 
         <div class="c-poster__info">
-          <p class="c-poster__date">04 — 06 JUNY</p>
+          <p class="c-poster__date">06 — 07 JUNY</p>
           <p class="c-poster__location">VERDÚ, L'URGELL</p>
         </div>
 
         <div class="c-poster__actions">
-          <a href="article.html" class="btn btn-primary">L'Ofici</a>
-          <a href="extra.html" class="btn btn-primary">Tallers</a>
+          <a href="article.html" class="btn btn-primary">Article</a>
+          <a href="extra.html" class="btn btn-primary">Agenda</a>
         </div>
+
+
+
 
       </section>
     </main>

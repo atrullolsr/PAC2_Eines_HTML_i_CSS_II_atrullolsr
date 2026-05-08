@@ -12,42 +12,147 @@
     <include src="./views/header.html"></include>
 
     <main class="container my-5">
-      <h1 class="text-center mb-5 c-extra-title">Ponents de les Jornades</h1>
+      <h1 class="text-center mb-5 c-extra-title text-uppercase">Ponents de les Jornades</h1>
 
       <section class="l-speakers-grid">
+
+        <article class="c-speaker-card card h-100 shadow-sm border-0">
+          <div class="c-speaker-card__image-wrapper card-img-top">
+            <img src="assets/images/toni-cumella.jpg" alt="Antoni Cumella" class="img-fluid">
+          </div>
+          <div class="card-body p-4 text-center">
+            <h2 class="c-speaker-card__name h5 card-title">Antoni Cumella</h2>
+            <p class="c-speaker-card__talk-title fw-bold text-primary small mb-2 text-uppercase">
+              "La Pell de l'Edifici"
+            </p>
+            <button type="button" class="btn btn-outline-primary btn-sm mt-3 rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalToni">
+              Saber-ne més
+            </button>
+          </div>
+        </article>
+
         <article class="c-speaker-card card h-100 shadow-sm border-0">
           <div class="c-speaker-card__image-wrapper card-img-top">
             <img src="assets/images/enric-orobitg.jpg" alt="Enric Orobitg" class="img-fluid">
           </div>
-          <div class="card-body p-4">
+          <div class="card-body p-4 text-center">
             <h2 class="c-speaker-card__name h5 card-title">Enric Orobitg Clua</h2>
-            <p class="c-speaker-card__talk-title fw-bold text-primary small mb-2">"L'evolució del Silló: de l'ús diari a la peça d'art"</p>
-            <p class="c-speaker-card__bio card-text">Un dels últims mestres terrissaires en actiu de Verdú. Orobitg representa la tradició més pura del "silló".</p>
-          </div>
-        </article>
-        <article class="c-speaker-card card h-100 shadow-sm border-0">
-          <div class="c-speaker-card__image-wrapper card-img-top">
-            <img src="assets/images/carme-balada.jpg" alt="Carme Balada" class="img-fluid">
-          </div>
-          <div class="card-body p-4">
-            <h2 class="c-speaker-card__name h5 card-title">Carme Balada</h2>
-            <p class="c-speaker-card__talk-title fw-bold text-primary small mb-2">"Formes i ombres: Ceràmica contemporània a Ponent"</p>
-            <p class="c-speaker-card__bio card-text">Artista ceramista que explora el minimalisme i la unió entre el disseny modern i el fang.</p>
+            <p class="c-speaker-card__talk-title fw-bold text-primary small mb-2 text-uppercase">
+              "L'evolució del Silló"
+            </p>
+            <button type="button" class="btn btn-outline-primary btn-sm mt-3 rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalEnric">
+              Saber-ne més
+            </button>
           </div>
         </article>
 
         <article class="c-speaker-card card h-100 shadow-sm border-0">
           <div class="c-speaker-card__image-wrapper card-img-top">
-            <img src="assets/images/toni-cumella.jpg" alt="Toni Cumella" class="img-fluid">
+            <img src="assets/images/carme-balada.jpg" alt="Carme Balada" class="img-fluid">
           </div>
-          <div class="card-body p-4">
-            <h2 class="c-speaker-card__name h5 card-title">Antoni Cumella</h2>
-            <p class="c-speaker-card__talk-title fw-bold text-primary small mb-2">"La ceràmica en l'arquitectura del segle XXI"</p>
-            <p class="c-speaker-card__bio card-text">Mestre ceramista especialista en la integració de la ceràmica en l'arquitectura i el patrimoni.</p>
+          <div class="card-body p-4 text-center">
+            <h2 class="c-speaker-card__name h5 card-title">Carme Balada</h2>
+            <p class="c-speaker-card__talk-title fw-bold text-primary small mb-2 text-uppercase">
+              "Minimalisme i Buit"
+            </p>
+            <button type="button" class="btn btn-outline-primary btn-sm mt-3 rounded-pill px-4" data-bs-toggle="modal" data-bs-target="#modalCarme">
+              Saber-ne més
+            </button>
           </div>
         </article>
+
       </section>
     </main>
+
+    <div class="modal fade c-modal" id="modalToni" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow-lg bg-dark text-white">
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title h3 fw-bold text-primary">Antoni Cumella</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="row g-4">
+              <div class="col-md-7">
+                <h6 class="text-uppercase small fw-bold text-secondary mb-2">Sobre el ponent</h6>
+                <p class="text-white-50">Dirigeix el taller de ceràmica més prestigiós del país aplicat a l'arquitectura. Premi Nacional de Disseny i col·laborador de grans arquitectes.</p>
+                <h6 class="text-uppercase small fw-bold text-secondary mb-2 mt-4">La xerrada</h6>
+                <p>La integració de la ceràmica en les façanes modernes i com l'artesania escala a nivell industrial sense perdre l'ànima.</p>
+              </div>
+              <div class="col-md-5">
+                <div class="p-3 rounded-3 bg-black bg-opacity-25 border border-secondary border-opacity-25">
+                  <h6 class="text-primary fw-bold mb-3 small">Fitxa de la sessió</h6>
+                  <ul class="list-unstyled mb-0 small">
+                    <li class="mb-2"><strong>🕒 Durada:</strong> 50 minuts</li>
+                    <li><strong>🏢 Àmbit:</strong> Arquitectura</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade c-modal" id="modalEnric" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow-lg bg-dark text-white">
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title h3 fw-bold text-primary">Enric Orobitg</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="row g-4">
+              <div class="col-md-7">
+                <h6 class="text-uppercase small fw-bold text-secondary mb-2">Sobre el ponent</h6>
+                <p class="text-white-50">Mestre artesà amb més de 40 anys d'ofici a Verdú. És l'hereu d'una tradició familiar que ha convertit el fang negre en un segell d'identitat catalana.</p>
+                <h6 class="text-uppercase small fw-bold text-secondary mb-2 mt-4">La xerrada</h6>
+                <p>S'analitzara com el disseny contemporani ha rescatat peces tradicionals per portar-les a les galeries d'art modernes.</p>
+              </div>
+              <div class="col-md-5">
+                <div class="p-3 rounded-3 bg-black bg-opacity-25 border border-secondary border-opacity-25">
+                  <h6 class="text-primary fw-bold mb-3 small">Fitxa de la sessió</h6>
+                  <ul class="list-unstyled mb-0 small">
+                    <li class="mb-2"><strong>🕒 Durada:</strong> 45 minuts</li>
+                    <li><strong>🔥 Tècnica:</strong> Terrissa Negra</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="modal fade c-modal" id="modalCarme" tabindex="-1" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content border-0 shadow-lg bg-dark text-white">
+          <div class="modal-header border-0 pb-0">
+            <h5 class="modal-title h3 fw-bold text-primary">Carme Balada</h5>
+            <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+          </div>
+          <div class="modal-body p-4">
+            <div class="row g-4">
+              <div class="col-md-7">
+                <h6 class="text-uppercase small fw-bold text-secondary mb-2">Sobre la ponent</h6>
+                <p class="text-white-50">Artista visual que explora el minimalisme a través de la ceràmica. El seu treball ha estat exposat internacionalment, destacant la seva puresa formal.</p>
+                <h6 class="text-uppercase small fw-bold text-secondary mb-2 mt-4">La xerrada</h6>
+                <p>Com el buit i l'ombra juguen un paper fonamental en la creació de peces de ceràmica que busquen la pau visual.</p>
+              </div>
+              <div class="col-md-5">
+                <div class="p-3 rounded-3 bg-black bg-opacity-25 border border-secondary border-opacity-25">
+                  <h6 class="text-primary fw-bold mb-3 small">Fitxa de la sessió</h6>
+                  <ul class="list-unstyled mb-0 small">
+                    <li class="mb-2"><strong>🕒 Durada:</strong> 60 minuts</li>
+                    <li><strong>🎨 Estil:</strong> Contemporani</li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <include src="./views/footer.html"></include>
     <script type="module" src="./assets/scripts/main.js"></script>

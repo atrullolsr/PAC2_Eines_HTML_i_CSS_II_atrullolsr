@@ -2,10 +2,10 @@
 
 @layer layouts {
   .main-footer {
+    background-color: var(--bs-dark) !important;
+    border-top: 5px solid var(--bs-primary);
     padding: torem(20) 0 torem(10);
-    background-color: #1a1a1a;
-    color: rgb(255 255 255 / 70%); // Notació moderna per evitar error de linter
-    border-top: 4px solid var(--bs-primary);
+    color: var(--bs-light) !important;
 
     // Gestió del responsive per columnes
     .row {
