@@ -6,13 +6,14 @@
   flex-direction: column;
   background-color: var(--bs-light);
   color: var(--bs-dark);
+
   // Requisit PAC: Noves unitats
   height: 70dvh;
 
   @supports (display: grid) {
     display: grid;
     grid-template-columns: repeat(12, 1fr);
-    grid-template-rows: repeat(7, 1fr);
+    grid-template-rows: repeat(12, 1fr);
 
     .c-poster {
       display: contents;
@@ -21,10 +22,15 @@
     // --- BLOC ESQUERRE (TEXT) ---
     .c-poster__header {
       grid-column: 2 / span 4;
-      grid-row: 2 / span 2;
+      grid-row: 3 / span 2;
       z-index: 2;
       align-self: center;
-      font-size: clamp(2rem, 4vw, 3.5rem);
+
+      // Aquí és on vols que sigui GRAN
+      .c-poster__title {
+        font-size: clamp(1rem, 8vw, 6rem);
+        line-height: 0.9;
+      }
 
       span {
         color: var(--bs-primary);
@@ -33,21 +39,22 @@
 
     .c-poster__info {
       grid-column: 2 / span 4;
-      grid-row: 4 / span 2;
+      grid-row: 7 / span 2;
       align-self: center;
       border-left: 4px solid var(--bs-primary);
       padding-left: 1.5rem;
+      font-size: clamp(0.5rem, 4vw, 2rem);
     }
 
     .c-poster__actions {
       grid-column: 2 / span 4;
-      grid-row: 6;
+      grid-row: 11;
       align-self: center;
       display: flex;
       flex-direction: column;
       gap: 1rem;
 
-      @include media-breakpoint-up(lg) {
+      @media (min-width: 992px) {
         flex-direction: row;
       }
     }
@@ -55,10 +62,9 @@
     // --- BLOC DRET (IMATGE / CARRUSEL) ---
     .c-poster__image-box {
       grid-column: 7 / span 6;
-      grid-row: 1 / span 7;
+      grid-row: 1 / span 12;
       overflow: hidden;
 
-      // Forçem que el carrusel de Bootstrap i els seus fills ocupin tot el Grid
       .carousel,
       .carousel-inner,
       .carousel-item {
@@ -68,19 +74,19 @@
       .c-poster__img {
         width: 100%;
         height: 100%;
-        object-fit: cover; // La clau perquè no es deformin
+        object-fit: cover;
         object-position: center;
       }
 
       .carousel-caption {
-        bottom: 1rem;      // El pugem una mica
-        right: 2rem;       // L'alineem a la dreta
+        bottom: 1rem;
+        right: 2rem;
         text-align: right;
 
         p {
           font-size: 0.75rem;
           letter-spacing: 1px;
-          text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+          text-shadow: 1px 1px 2px rgb(0 0 0 / 80%);
         }
       }
     }

@@ -9,6 +9,7 @@
 
     // Gestió del responsive per columnes
     .row {
+      margin-bottom: 0 !important;
       @include media-breakpoint-down(md) {
         justify-content: center;
         text-align: center;
@@ -63,21 +64,39 @@
       // CONTACTE VERTICAL
       &--contact {
         display: flex;
-        flex-direction: column;
+
+        // MÒBIL: En fila i ocupant tot l'ample
+        @include media-breakpoint-down(md) {
+          flex-direction: row;
+          justify-content: space-between;
+          width: 100%;
+          padding: 0 torem(5);
+        }
+
+        // WEB: Llista vertical normal
+        @include media-breakpoint-up(md) {
+          flex-direction: column;
+          align-items: flex-start;
+        }
 
         li {
           display: flex;
           align-items: center;
           font-size: torem(14);
+          white-space: nowrap; // Evita que el text salti de línia
 
-          @include media-breakpoint-down(md) {
-            justify-content: center;
+          @include media-breakpoint-up(md) {
+            margin-bottom: torem(8); // Espai entre ítems en vertical
           }
 
           i {
-            width: torem(20);
             color: var(--bs-light);
+            margin-right: torem(8);
             font-size: torem(16);
+
+            @include media-breakpoint-down(md) {
+              margin-right: torem(3); // Menys espai en mòbil
+            }
           }
         }
       }
@@ -95,6 +114,20 @@
         &::after {
           width: 100%;
         }
+      }
+    }
+  }
+}
+
+@media (max-width: 450px) {
+  .main-footer__list--contact {
+    li {
+      // Mida ultra-petita i lletres juntes només aquí
+      font-size: 0.55rem !important;
+      letter-spacing: -0.5px !important;
+
+      i {
+        font-size: 0.7rem !important;
       }
     }
   }

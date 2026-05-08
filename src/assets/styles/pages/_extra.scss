@@ -2,10 +2,10 @@
 @use "../dependencies" as *;
 
 // COLORS OKLCH
-$color-negre: oklch(25% 0.02 40);
-$color-daurat: oklch(70% 0.12 50);
-$color-fons: oklch(98% 0.01 40);
-$color-text-suau: oklch(45% 0.01 40);
+$color-negre: oklch(25% 0.02 40deg);
+$color-daurat: oklch(70% 0.12 50deg);
+$color-fons: oklch(98% 0.01 40deg);
+$color-text-suau: oklch(45% 0.01 40deg);
 
 .page-extra {
   background-color: $color-fons;
@@ -29,7 +29,7 @@ $color-text-suau: oklch(45% 0.01 40);
   gap: 3rem;
   align-items: start;
 
-  @media (max-width: 992px) {
+  @media (width <= 992px) {
     grid-template-columns: 1fr;
   }
 }
@@ -43,7 +43,7 @@ $color-text-suau: oklch(45% 0.01 40);
   font-family: $font-family-serif;
   font-size: 1.1rem;
   color: $color-daurat;
-  border-bottom: 1px solid oklch(85% 0.01 40);
+  border-bottom: 1px solid oklch(85% 0.01 40deg);
   padding-bottom: 0.5rem;
   margin-bottom: 1.2rem;
   text-transform: uppercase;
@@ -55,7 +55,7 @@ $color-text-suau: oklch(45% 0.01 40);
   border-radius: 8px;
   margin-bottom: 0.75rem;
   border-left: 4px solid $color-daurat;
-  box-shadow: 0 2px 5px oklch(0% 0 0 / 0.05);
+  box-shadow: 0 2px 5px oklch(0% 0 0deg / 5%);
   transition: transform 0.2s ease;
 
   &:hover {
@@ -108,14 +108,14 @@ $color-text-suau: oklch(45% 0.01 40);
   background: white;
   padding: 1.2rem 1.5rem; // Molt més concentrat
   border-radius: 8px;
-  border: 1px solid oklch(90% 0.01 40);
+  border: 1px solid oklch(90% 0.01 40deg);
   display: flex;
   justify-content: space-between; // Separa el nom de l'adreça
   align-items: center; // Centrat verticalment
   gap: 2rem;
-  box-shadow: 0 4px 12px oklch(0% 0 0 / 0.04);
+  box-shadow: 0 4px 12px oklch(0% 0 0deg / 4%);
 
-  @media (max-width: 1200px) {
+  @media (width <= 1200px) {
     flex-direction: column;
     align-items: flex-start;
     gap: 1rem;
@@ -137,14 +137,14 @@ $color-text-suau: oklch(45% 0.01 40);
     font-family: $font-family-serif;
     font-size: 1.4rem;
     color: $color-negre;
-    margin: 0.2rem 0 0 0;
+    margin: 0.2rem 0 0;
     line-height: 1.1;
   }
 
   &__detail {
     text-align: right;
 
-    @media (max-width: 1200px) {
+    @media (width <= 1200px) {
       text-align: left;
     }
   }
@@ -159,7 +159,7 @@ $color-text-suau: oklch(45% 0.01 40);
     display: inline-block;
     font-size: 0.75rem;
     color: $color-text-suau;
-    background: oklch(95% 0.01 40);
+    background: oklch(95% 0.01 40deg);
     padding: 2px 8px;
     border-radius: 4px;
     margin-top: 4px;
