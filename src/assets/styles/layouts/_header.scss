@@ -4,10 +4,10 @@
   .main-header {
     .main-nav {
       // Forcem el color de fons de la teva marca
-      background-color: var(--bs-dark) !important;
+      background-color: var(--bs-dark);
       border-bottom: 5px solid var(--bs-primary);
       padding: torem(20) 0 torem(10);
-      color: var(--bs-light) !important;
+      color: var(--bs-light);
 
       &__logo {
         font-weight: bold;
@@ -27,7 +27,7 @@
           letter-spacing: 1px;
 
           &:hover {
-            color: var(--bs-primary) !important;
+            color: var(--bs-primary);
           }
         }
       }
@@ -35,20 +35,22 @@
   }
 }
 
-// --- LÒGICA PER AMAGAR L'ENLLAÇ ACTUAL ---
-// Aquesta part ha d'anar fora de qualsevol "layer" o "nesting" per tenir prioritat
-body.page-home .nav-link--home,
-body.page-ponents .nav-link--ponents,
-body.page-article .nav-link--article,
-body.page-extra .nav-link--extra {
-  display: none !important;
-}
+@layer base {
+  // --- LÒGICA PER AMAGAR L'ENLLAÇ ACTUAL ---
+  // Aquesta part ha d'anar fora de qualsevol "layer" o "nesting" per tenir prioritat
+  body.page-home .nav-link--home,
+  body.page-ponents .nav-link--ponents,
+  body.page-article .nav-link--article,
+  body.page-extra .nav-link--extra {
+    display: none !important;
+  }
 
-// Ajust per al menú desplegable en mòbil
-@media (width <= 991px) {
-  .navbar-collapse {
-    padding: 1rem;
-    border-radius: 8px;
-    margin-top: 10px;
+  // Ajust per al menú desplegable en mòbil
+  @media (width <= 991px) {
+    .navbar-collapse {
+      padding: 1rem;
+      border-radius: 8px;
+      margin-top: 10px;
+    }
   }
 }

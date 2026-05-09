@@ -10,6 +10,7 @@
     // Gestió del responsive per columnes
     .row {
       margin-bottom: 0 !important;
+
       @include media-breakpoint-down(md) {
         justify-content: center;
         text-align: center;
@@ -86,7 +87,7 @@
           white-space: nowrap; // Evita que el text salti de línia
 
           @include media-breakpoint-up(md) {
-            margin-bottom: torem(8); // Espai entre ítems en vertical
+            margin-bottom: torem(6); // Espai entre ítems en vertical
           }
 
           i {
@@ -119,7 +120,7 @@
   }
 }
 
-@media (max-width: 450px) {
+@media (width <= 450px) {
   .main-footer__list--contact {
     li {
       // Mida ultra-petita i lletres juntes només aquí
