@@ -15,4 +15,4 @@
  * Com que els @use ja estan carregats, ara ja podem
  * establir la jerarquia per al navegador.
  */
-@layer reset, base, utilities, components, layouts, pages;
+@layer base, utilities, layouts, components, pages;

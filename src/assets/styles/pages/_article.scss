@@ -22,7 +22,7 @@
         img {
           width: 100%;
           border-radius: 4px;
-          height: 300px !important;
+          height: 300px;
           filter: contrast(1.1) grayscale(20%);
           object-fit: cover; // FA LA MÀGIA: retalla sense deformar
           object-position: center;

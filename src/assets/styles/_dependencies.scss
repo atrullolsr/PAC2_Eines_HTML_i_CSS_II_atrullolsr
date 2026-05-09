@@ -13,8 +13,12 @@
 // 2. Configuració de paths per a fonts
 $fa-font-path: "../webfonts";
 
-// 3. Encapsulem totes les dependències externes en la capa de prioritat baixa
-@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
-
-// Importar Bootstrap (NOMÉS AQUÍ, dins de la capa)
+/**
+ * Bootstrap core
+ */
 @import "bootstrap/scss/bootstrap";
+
+/**
+  * Bootstrap icons
+  */
+@import "../../../node_modules/bootstrap-icons/font/bootstrap-icons.css";

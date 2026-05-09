@@ -41,7 +41,6 @@ $color-text-suau: oklch(45% 0.01 40deg);
   }
 
   .c-day-header {
-    font-family: $font-family-serif;
     font-size: 1.1rem;
     color: $color-daurat;
     border-bottom: 1px solid oklch(85% 0.01 40deg);
@@ -78,7 +77,6 @@ $color-text-suau: oklch(45% 0.01 40deg);
     }
 
     .c-workshop-card__title {
-      font-family: $font-family-serif;
       font-size: 1.1rem;
       margin: 0;
       color: $color-negre;
@@ -137,7 +135,6 @@ $color-text-suau: oklch(45% 0.01 40deg);
     }
 
     &__name {
-      font-family: $font-family-serif;
       font-size: 1.4rem;
       color: $color-negre;
       margin: 0.2rem 0 0;
