@@ -1,56 +1,30 @@
 @use "../dependencies" as *;
 
 @layer layouts {
-  .main-header {
-    .main-nav {
-      // Forcem el color de fons de la teva marca
-      background-color: var(--bs-dark);
-      border-bottom: 5px solid var(--bs-primary);
-      padding: torem(20) 0 torem(10);
+  .main-nav {
+    &__link {
       color: var(--bs-light);
+      text-transform: uppercase;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      transition: color 0.3s ease;
+      text-decoration: none;
 
-      &__logo {
-        font-weight: bold;
-        text-decoration: none;
-
-        &-text { color: var(--bs-light); }
-        &-accent { color: var(--bs-primary); }
-      }
-
-      &__list {
-        text-align: right;
-
-        .nav-link {
-          text-transform: uppercase;
-          font-size: torem(13);
-          font-weight: 500;
-          letter-spacing: 1px;
-
-          &:hover {
-            color: var(--bs-primary);
-          }
-        }
+      &:hover {
+        color: var(--bs-primary);
       }
     }
-  }
-}
 
-@layer base {
-  // --- LÒGICA PER AMAGAR L'ENLLAÇ ACTUAL ---
-  // Aquesta part ha d'anar fora de qualsevol "layer" o "nesting" per tenir prioritat
-  body.page-home .nav-link--home,
-  body.page-ponents .nav-link--ponents,
-  body.page-article .nav-link--article,
-  body.page-extra .nav-link--extra {
+    &__brand-accent {
+      color: var(--bs-primary);
+    }
+  }
+
+  /* ACTIVE PER PÀGINA */
+  body.page-home .main-nav__link--home,
+  body.page-ponents .main-nav__link--ponents,
+  body.page-article .main-nav__link--article,
+  body.page-extra .main-nav__link--extra {
     display: none !important;
-  }
-
-  // Ajust per al menú desplegable en mòbil
-  @media (width <= 991px) {
-    .navbar-collapse {
-      padding: 1rem;
-      border-radius: 8px;
-      margin-top: 10px;
-    }
   }
 }

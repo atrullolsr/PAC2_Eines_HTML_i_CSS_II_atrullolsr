@@ -10,6 +10,7 @@
 }
 
 @layer components {
+  /* CARD BASE */
   .c-speaker-card {
     display: flex;
     flex-direction: column;
@@ -17,49 +18,46 @@
     text-align: center;
     flex: 1 1 300px;
     max-width: 400px;
-    background-color: var(--bs-dark) !important;
-    color: $brand-white !important;
+    background-color: var(--bs-dark);
+    color: var(--bs-white);
     border: none;
     border-radius: 12px;
     overflow: hidden;
-    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
 
     &:hover {
-      transform: translateY(-10px);
-      box-shadow: 0 15px 30px oklch(0% 0 0deg / 30%);
+      transform: translateY(-8px);
+      box-shadow: 0 15px 30px oklch(0% 0 0deg / 25%);
     }
 
-    &__image-wrapper {
-      width: 100%; // Ocupa tot l'ample de la card
-      height: 300px !important;
+    /* IMATGE */
+    .c-speaker-card__image-wrapper {
+      width: 100%;
+      height: 375px;
       overflow: hidden;
 
       img {
         width: 100%;
-        height: 100% !important;
-        object-fit: cover !important;
-        object-position: top; // Centra el focus de la foto
+        height: 100%;
+        object-fit: cover;
+        object-position: center top;
+        display: block;
       }
     }
 
     .card-body {
-      display: flex;
-      flex-direction: column;
-      align-items: center; // Centra el títol, bio i botó
-      justify-content: center;
-      gap: 0.75rem;
-      padding: 1.5rem;
       width: 100%;
-    }
+      padding: 1.5rem;
+      background-color: var(--bs-dark);
+      color: var(--bs-white);
 
-    &__name {
-      font-weight: 700;
-      margin-bottom: 0; // Netegem marges de Bootstrap
-    }
+      .c-speaker-card__name {
+        color: var(--bs-white);
+      }
 
-    &__talk-title {
-      letter-spacing: 0.5px;
-      color: $brand-primary;
+      .c-speaker-card__talk-title {
+        color: var(--bs-primary);
+      }
     }
   }
 }

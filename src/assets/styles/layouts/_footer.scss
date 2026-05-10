@@ -2,24 +2,19 @@
 
 @layer layouts {
   .main-footer {
-    background-color: var(--bs-dark) !important;
+    background-color: var(--bs-dark);
     border-top: 5px solid var(--bs-primary);
     padding: torem(20) 0 torem(10);
-    color: var(--bs-light) !important;
+    color: var(--bs-light);
 
-    // Gestió del responsive per columnes
     .row {
-      margin-bottom: 0 !important;
-
-      @include media-breakpoint-down(md) {
-        justify-content: center;
-        text-align: center;
-      }
+      margin-bottom: 0;
     }
 
+    // LOGO
     &__logo {
       margin-bottom: torem(10);
-      color: var(--bs-light) !important;
+      color: var(--bs-light);
       font-size: torem(26);
       font-weight: 700;
 
@@ -35,100 +30,103 @@
       line-height: 1.6;
 
       @include media-breakpoint-down(md) {
-        margin: 0 auto torem(20);
+        margin: 0 auto 1rem;
+        text-align: center;
       }
     }
 
-    &__list {
-      padding: 0 !important;
-      margin: 0;
+    // MENÚ
+    &__menu {
       list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: torem(25);
+      text-transform: uppercase;
 
-      // MENU HORITZONTAL
-      &--menu {
-        display: flex;
-        flex-flow: row wrap;
-        gap: torem(25); // Això manté l'espai entre els links
-        align-items: center;
-        text-transform: uppercase;
-
-        a {
-          text-decoration: none !important;
-        }
-
-        @include media-breakpoint-down(md) {
-          justify-content: center;
-          margin-bottom: torem(30);
-        }
-      }
-
-      // CONTACTE VERTICAL
-      &--contact {
-        display: flex;
-
-        // MÒBIL: En fila i ocupant tot l'ample
-        @include media-breakpoint-down(md) {
-          flex-direction: row;
-          justify-content: space-between;
-          width: 100%;
-          padding: 0 torem(5);
-        }
-
-        // WEB: Llista vertical normal
-        @include media-breakpoint-up(md) {
-          flex-direction: column;
-          align-items: flex-start;
-        }
-
-        li {
-          display: flex;
-          align-items: center;
-          font-size: torem(14);
-          white-space: nowrap; // Evita que el text salti de línia
-
-          @include media-breakpoint-up(md) {
-            margin-bottom: torem(6); // Espai entre ítems en vertical
-          }
-
-          i {
-            color: var(--bs-light);
-            margin-right: torem(8);
-            font-size: torem(16);
-
-            @include media-breakpoint-down(md) {
-              margin-right: torem(3); // Menys espai en mòbil
-            }
-          }
-        }
+      @include media-breakpoint-down(md) {
+        margin: 1rem 0;
       }
     }
 
-    &__link {
-      position: relative;
-      color: var(--bs-light) !important;
+    &__menu-link {
+      color: var(--bs-light);
       text-decoration: none;
-      transition: all 0.3s ease;
+      display: inline-block;
+      transition: color 0.3s ease;
 
       &:hover {
-        color: var(--bs-primary) !important;
+        color: var(--bs-primary);
+      }
 
-        &::after {
-          width: 100%;
+      &:visited,
+      &:active,
+      &:focus {
+        color: var(--bs-light);
+        text-decoration: none;
+      }
+    }
+
+    // CONTACTE
+    &__list--contact {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+
+      @include media-breakpoint-down(md) {
+        flex-flow: row wrap;
+        justify-content: space-between;
+        gap: 0.5rem;
+      }
+
+      @include media-breakpoint-up(md) {
+        flex-direction: column;
+      }
+
+      li {
+        display: flex;
+        align-items: center;
+        font-size: torem(14);
+
+        @include media-breakpoint-down(md) {
+          font-size: torem(11);
+          white-space: normal;
+        }
+
+        @include media-breakpoint-up(md) {
+          margin-bottom: torem(6);
+          white-space: nowrap;
+        }
+
+        i {
+          margin-right: torem(8);
+          color: var(--bs-light);
+          flex-shrink: 0;
         }
       }
     }
   }
-}
 
-@media (width <= 450px) {
-  .main-footer__list--contact {
-    li {
-      // Mida ultra-petita i lletres juntes només aquí
-      font-size: 0.55rem !important;
-      letter-spacing: -0.5px !important;
+  // EXTRA PETIT
+  @media (width <= 450px) {
+    .main-footer {
+      &__menu {
+        gap: 0.75rem;
+        font-size: 0.75rem;
+      }
 
-      i {
-        font-size: 0.7rem !important;
+      &__list--contact {
+        li {
+          font-size: 0.65rem;
+
+          i {
+            font-size: 0.75rem;
+            margin-right: 0.25rem;
+          }
+        }
       }
     }
   }

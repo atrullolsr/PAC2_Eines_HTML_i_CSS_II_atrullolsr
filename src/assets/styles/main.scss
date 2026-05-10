@@ -1,18 +1,31 @@
 /**
- * 1. TOTS ELS @USE
+ * 1. Dependencies globals
  */
 @use "dependencies";
+
+/**
+  * 2. Base
+  */
 @use "base/reset";
+@use "base/base";
+
+/**
+  * 3. Layouts
+  */
 @use "layouts/header";
 @use "layouts/footer";
+
+/**
+  * 4. Pages
+  */
 @use "pages/home";
 @use "pages/speakers";
 @use "pages/article";
 @use "pages/extra";
 
 /**
- * 2. ARA DEFINIM L'ORDRE DE LES CAPES
- * Com que els @use ja estan carregats, ara ja podem
- * establir la jerarquia per al navegador.
- */
-@layer base, utilities, layouts, components, pages;
+  * 5. Ordre de layers
+  */
+@layer reset, base, utilities, layouts, components, pages;
+
+// @layer reset, base, layouts, components, pages;
